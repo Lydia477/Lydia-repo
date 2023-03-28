@@ -6,3 +6,4 @@
 ## 系級:教育系一年級  
 # 課程筆記區、作業連結區、專題連結區  
 [hw1連結](https://github.com/Lydia477/Lydia-repo/blob/main/Untitled5-checkpoint.ipynb)
+[hw2連結](https://github.com/Lydia477/Lydia-repo/blob/main/Untitled6.ipynb)
