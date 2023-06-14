@@ -32,7 +32,9 @@ async function MS_TextSentimentAnalysis(thisEvent){
   documents.push(thisEvent.message.text);
   //documents.push("我覺得櫃檯人員很親切");
   const results = await analyticsClient.analyzeSentiment(documents,"zh-Hant",{        
-    includeOpinionMining: true   
+    //const results = await analyticsClient.analyzeSentiment(documents,{
+      //language:"zh-Hant",
+      includeOpinionMining: true   
   });
   console.log("[results] ", JSON.stringify(results));
   //Save to JSON Server
@@ -42,9 +44,13 @@ async function MS_TextSentimentAnalysis(thisEvent){
     "opinionText": ""
   };
 
-  if(result[0].sentences[0].length!=0){
-    newData.opinionText = result[0].sentences[0].opinions[0].target.text;
+  if (results[0].sentences.length > 0 && results[0].sentences[0].opinions.length > 0) {
+    newData.opinionText = results[0].sentences[0].opinions[0].target.text;
   }
+
+  //if(results[0].sentences[0].length!=0){
+    //newData.opinionText = results[0].sentences[0].opinions[0].target.text;
+  //}
 
   let axios_add_data = {
     method:"post",
@@ -60,11 +66,20 @@ async function MS_TextSentimentAnalysis(thisEvent){
     console.log(JSON.stringify(response.data));
   })
 
+const scoreMap = {
+  'positive': 5,
+  'negative':1,
+  'neutral': 3
+};
 
+const sentiment = results[0].sentiment;
+const score = scoreMap[sentiment];
 
   const echo={
     type:'text',
-    text:results[0].sentiment
+    text:`情感分析結果：${sentiment}\n評論分數：${score}\n評論目標：${newData.opinionText}`
+    //text:'情感分析結果' + results[0].sentiment
+    //text:results[0].sentiment
   };
   return client.replyMessage(thisEvent.replyToken,echo);
 }
