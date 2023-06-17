@@ -24,6 +24,6 @@ const echo={
     text:`情感分析結果：${sentiment}\n評論分數：${score}\n評論目標：${newData.opinionText}`  
 
 最後附上LINE的測試截圖  
-![LINE Chatbot截圖1]("C:\Users\DAN\Desktop\79590.jpg")  
+![LINE Chatbot截圖1]("[C:\Users\DAN\Desktop\79590.jpg](https://github.com/Lydia477/Lydia-repo/blob/main/hw4/79590.jpg)")  
 ![LINE Chatbot截圖2]("C:\Users\DAN\Desktop\79591.jpg")  
 ![LINE Chatbot截圖3]("C:\Users\DAN\Desktop\79592.jpg")  
