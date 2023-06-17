@@ -25,5 +25,5 @@ const echo={
 
 最後附上LINE的測試截圖  
 ![LINE Chatbot截圖1]("[C:\Users\DAN\Desktop\79590.jpg](https://github.com/Lydia477/Lydia-repo/blob/main/hw4/79590.jpg)")  
-![LINE Chatbot截圖2]("C:\Users\DAN\Desktop\79591.jpg")  
+![LINE Chatbot截圖2]("https://github.com/Lydia477/Lydia-repo/blob/main/hw4/79591.jpg?raw=true") 
 ![LINE Chatbot截圖3]("C:\Users\DAN\Desktop\79592.jpg")  
